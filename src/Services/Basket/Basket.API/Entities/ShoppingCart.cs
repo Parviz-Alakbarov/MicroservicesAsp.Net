@@ -9,21 +9,25 @@
             get
             {
                 decimal total = 0;
-                foreach (ShoppingCartItem item in Items)
+                if (Items != null)
                 {
-                    total += item.Price * item.Quantity;
+                    foreach (var item in Items)
+                    {
+                        total += item.Price * item.Quantity;
+                    }
                 }
+
                 return total;
             }
         }
 
         public ShoppingCart()
         {
-
         }
-        public ShoppingCart(string userName)
+        public ShoppingCart(string userName) : this()
         {
             UserName = userName;
+            Items = new List<ShoppingCartItem>();
         }
     }
 }
