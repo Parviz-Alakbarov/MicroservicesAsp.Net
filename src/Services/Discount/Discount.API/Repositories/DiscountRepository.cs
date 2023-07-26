@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Discount.API.Entities;
 using Npgsql;
+using System.Data;
 
 namespace Discount.API.Repositories
 {
